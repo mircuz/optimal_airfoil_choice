@@ -1,6 +1,6 @@
 # optimal_multi_airfoil_choice
-Designed to work in "automotive field" with low Re.
 Script select the best combination possible, based on requirements, for the main wing and the flap.
+Designed to work in "automotive field" with low Re.
 The (inviscid) library is already build with some of the most common profiles used at this Re, however it's possibile to add your in a very simple and intuitive manner.
 
 
