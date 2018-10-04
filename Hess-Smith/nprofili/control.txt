@@ -1,0 +1,123 @@
+% Please to welcome you in our magic world
+% This is a 'Control File'. Since the program is itself a big mess, we invite you to not change anything. 
+Refer to that poor idiot that thought this solution if there are any problem
+
+
+%Insert here number of airfoils 
+2
+
+%How many points to define each airfoil? (should be an odd number, better like 41,61,81...-> number of panels will be npoints-1) (if not using NACA make sure this matches max number of points among airfoils)
+151
+
+
+%Are you that kind of bad person who wants to change number of panel for each airfoil (No name needed)? (0-> no, 1->yes)
+0
+
+
+%If no, continue you good guy. If yes, shame on you. 
+%Specify now number of points for each airfoil (Again, odd number like 41,61,81... -> number of panels will be 40,60,80...). (First -> Main Airfoil, Second -> Flap, (eventually)Third -> Gurney Flap)
+101
+81
+21
+
+
+[Main Airfoil]
+
+%Do you want to use NACA airfoil? (0->no, 1->yes) 
+0
+
+
+     %If no, please indicate .txt files containing points in order to generate airfoil [TOP-BOTTOM] 
+points_up_w.txt
+points_dw_w.txt
+
+     %If yes, Which NACA airfoil do you want to use? (NACAxxxx)
+NACA4415
+
+
+[Flap]
+
+%Do you want to use NACA airfoil? (0->no, 1->yes) 
+0
+
+
+     %If no, please indicate .txt files containing points in order to generate airfoil [TOP-BOTTOM]
+points_up_f.txt
+points_dw_f.txt
+
+
+     %If yes, Which NACA airfoil do you want to use? (NACAxxxx)
+NACA4415
+
+[Gurney-Flap]
+
+%Do you want to use NACA airfoil? (0->no, 1->yes) 
+1
+
+
+     %If no, please indicate name of the file .txt [TOP-BOTTOM]
+
+
+
+     %If yes, Which NACA airfoil do you want to use? (NACAxxxx)
+NACA0012
+
+
+[GEOMETRIES]
+
+%Specify AoA (°) for each airfoil(First -> Main Airfoil, Second -> Flap)
+7.0
+13.0
+
+
+
+%Specify distance (gardening needed,keep trying)
+
+%Flap [x;y] (distance from LE of Main airfoil whose size is 1) (y negative for flap 'above' main airfoil in plot)
+1.164
+-0.13
+
+%GurneyFlap
+-0.001
+-0.03
+
+
+[Air condition]
+
+%Windspeed [m/s]
+50
+
+
+%Do you want to reconstruct polar for main airfoil varying AoA of Flap? (0->no, 1->yes)
+1
+
+
+%Report here AoA_0, AoA_step, number of AoA
+30
+1
+45
+ 
+%Do you want to create plots?(it's a really long procedure, choose wisely) (0->no, 1->yes)
+0
+
+
+%Do you want to exploit the Valarezo criterion in order to look for maximum lift configuration? (0->no,1->yes)
+0
+
+   %if yes, please indicate coordinates for square grid for flap movement
+[x coordinates: min,step,max. if min and max are negative, step must be negative too]
+1.14
+0.0025
+1.165
+
+[y coordinates: min,step,max. min,step,max. if min and max are negative, step must be negative too]
+-0.12
+-0.0015
+-0.135
+
+
+%Please indicate maximum pressure difference (it depends on M and Re, refer to plot 'deltaCp_valarezo') [it's extremely approximated...]
+10
+
+
+
